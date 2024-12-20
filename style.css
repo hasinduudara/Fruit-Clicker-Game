@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: url('img/bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#game-container {
+    background-color: rgba(45, 45, 45, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: white;
+    width: 100%;
+    max-width: 600px;
+}
+
+#game-area {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    margin: 20px auto;
+    background-color: #fff;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fruit {
+    position: absolute;
+    width: 10vw;
+    height: 10vw;
+    max-width: 50px;
+    max-height: 50px;
+    cursor: pointer;
+}
+
+button {
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+h1 {
+    animation: fadeIn 2s ease-in-out infinite alternate;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#instruction {
+    animation: slideIn 2s ease-in-out infinite alternate;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-10px);
+    }
+    to {
+        transform: translateX(10px);
+    }
+}
+
+#message {
+    font-size: 2em;
+    animation: messageFadeIn 1s ease-in-out infinite alternate;
+}
+
+@keyframes messageFadeIn {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Add media query for smaller screens */
+@media (max-width: 600px) {
+    #game-area {
+        height: 200px;
+    }
+
+    #message {
+        font-size: 1.5em;
+    }
+
+    button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
